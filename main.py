@@ -164,7 +164,7 @@ async def show_users(client, message: Message):
     else:
         await message.reply_text("ℹ️ No users found in the subscription data.")
 
-# 3. /myplan
+# 3./myplan
 @bot.on_message(filters.command("myplan") & filters.private)
 async def my_plan(client, message: Message):
     user_id = str(message.from_user.id)
@@ -183,7 +183,7 @@ async def my_plan(client, message: Message):
         )
     else:
         await message.reply_text("**❌ You are not a premium user.**")
-# 4. /add_channel
+# 4./add_channel
 @bot.on_message(filters.command("add_channel"))
 async def add_channel(client, message: Message):
     user_id = str(message.from_user.id)
@@ -206,7 +206,7 @@ async def add_channel(client, message: Message):
         await message.reply_text("Invalid command format. Use: /add_channel {channel/group_id}")
 
 
-# 5. /remove_channels
+# 5./remove_channels
 @bot.on_message(filters.command("remove_channel"))
 async def remove_channel(client, message: Message):
     user_id = str(message.from_user.id)
@@ -231,7 +231,7 @@ async def remove_channel(client, message: Message):
 # Command to show all allowed channels (Admin only)
 @bot.on_message(filters.command("allowed_channels"))
 async def allowed_channels(client, message: Message):
-    user_id = message.from_user.id
+    6201066540 = message.from_user.id
 
     if not is_admin(user_id):
         await message.reply_text("❌ It's Only Owner Command.")
