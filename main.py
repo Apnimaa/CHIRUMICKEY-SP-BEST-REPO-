@@ -93,7 +93,7 @@ def write_subscription_data(data):
 # Admin-only decorator
 def admin_only(func):
     async def wrapper(client, message: Message):
-        if message.from_user.id != YOUR_ADMIN_ID:
+        if message.from_user.id != 6201066540:
             await message.reply_text("You are not authorized to use this command.")
             return
         await func(client, message)
@@ -143,7 +143,7 @@ YOUR_ADMIN_ID = 6201066540
 
 # Helper function to check admin privilege
 def is_admin(user_id):
-    return user_id == YOUR_ADMIN_ID
+    return user_id == 6201066540
 
 # Command to show all users (Admin only)
 @bot.on_message(filters.command("users") & filters.private)
@@ -171,7 +171,7 @@ async def my_plan(client, message: Message):
     subscription_data = read_subscription_data()  # Make sure this function is implemented elsewhere
 
     # Define YOUR_ADMIN_ID somewhere in your code
-    if user_id == str(YOUR_ADMIN_ID):  # YOUR_ADMIN_ID should be an integer
+    if user_id == str(6201066540):  # YOUR_ADMIN_ID should be an integer
         await message.reply_text("**✨ You have permanent access!**")
     elif any(user[0] == user_id for user in subscription_data):  # Assuming subscription_data is a list of [user_id, expiration_date]
         expiration_date = next(user[1] for user in subscription_data if user[0] == user_id)
